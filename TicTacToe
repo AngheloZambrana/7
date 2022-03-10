@@ -1,0 +1,99 @@
+package TicTacToe;
+
+import javax.swing.Jlabel;
+
+public class vista extends javax.swing.JFrame {
+    
+    String siguientejuego = "O";
+    String turno="X"
+    JLabel lbs[] = new Jlabel[9];
+    int vs[][] ={
+        {1,2,3},
+        {4,5,6},
+        {7,8,9},
+        {1,4,7},
+        {2,5,8},
+        {3,6,9},
+        {1,5,9},
+        {3,5,7},
+    } ;
+    
+    public vista() {
+        initComponents();
+        this.setLocationRelativeTo(null);
+        lbs[0] = Jlabel1;
+        lbs[1] = Jlabel2;
+        lbs[2] = Jlabel3;
+        lbs[3] = Jlabel4;
+        lbs[4] = Jlabel5;
+        lbs[5] = Jlabel6;
+        lbs[6] = Jlabel7;
+        lbs[7] = Jlabel8;
+        lbs[8] = Jlabel9;
+    }
+    private void jLabel1MousePressed(java.awt.event.MouseEvent evt) {
+        presionar(1);
+    }
+    private void jLabel2MousePressed(java.awt.event.MouseEvent evt) {
+        presionar(2);
+    }
+    private void jLabel3MousePressed(java.awt.event.MouseEvent evt) {
+        presionar(3);
+    }
+    private void jLabel5MousePressed(java.awt.event.MouseEvent evt) {
+        presionar(4);
+    }
+    private void jLabel5MousePressed(java.awt.event.MouseEvent evt) {
+        presionar(5);
+    }private void jLabel6MousePressed(java.awt.event.MouseEvent evt) {
+        presionar(6);
+    }
+    private void jLabel7MousePressed(java.awt.event.MouseEvent evt) {
+        presionar(7);
+    }
+    private void jLabel8MousePressed(java.awt.event.MouseEvent evt) {
+        presionar(8);
+    }
+    private void jLabel9MousePressed(java.awt.event.MouseEvent evt) {
+        presionar(9);
+    }
+    private void jButton1ActionPerformed(java.awt.event.ActionPerforment evt) {
+        for(int i=0;i<lbs.lenght;i++){
+            lbs[i]setText("");
+            lbs[i].setBackground(Color.white);
+        }
+        
+        turno = siguientejuego;
+        if(siguientejuego.equals("O")) {
+            siguientejuego = "X";
+        }else {
+            siguientejuego = "O";
+        }
+    }
+    
+    public void presionar(int casilla) {
+        if(lbs[casilla].getTex().equals("")) {
+        lbs[casilla].setText(turno);
+        cambiarturno();
+        comprobarganador();
+    }
+    public void cambiarturno() {
+        if(turnos.equals("X")) {
+            turno = "O"
+        }else {
+            turno = "X";
+        }
+    }
+    
+    public void  comprobar ganador() {
+        for(int i=0;i<vs.lenght;i++) {
+            if(lbs[vs[i][0]-1].getText().equals("X"))&&
+                  (lbs[vs[i][1]-1].getText().equals("X")&&  
+                  (lbs[vs[i][2]-1].getText().equals("X")) {
+                
+                System.out.printIn("gano X");      
+             }
+        
+        }
+    }
+}
